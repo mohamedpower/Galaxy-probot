@@ -106,6 +106,7 @@ client.on('message', message => {
   })
 }
 });
+
 client.on('message', message => {
 if(message.content.startsWith(prefix +"server")){
   if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`**هذه الخاصية للادارة فقط** :negative_squared_cross_mark: `)
@@ -130,6 +131,7 @@ message.channel.sendEmbed(embed)
 
 }
 });
+
 client.on('message', message => {
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
@@ -162,6 +164,7 @@ message.react("❌")
 }
  }
 });
+
 client.on("message", message => {
 	var args = message.content.split(' ').slice(1); 
 	var msg = message.content.toLowerCase();
@@ -208,6 +211,7 @@ client.on("message", message => {
 		} 
 	} 
 });
+
 var AsciiTable = require('ascii-data-table').default
 client.on('message', message =>{
 
@@ -225,6 +229,7 @@ client.on('message', message =>{
         message.channel.send(`**\`\`\`xl\n${res}\`\`\`**`);
     }
 });
+
 client.on('ready', () => {
   console.log('|===================================|');
   console.log(`|  Users Size ${client.users.size}  |`);
@@ -235,6 +240,7 @@ client.on('ready', () => {
   console.log(`|              Im Ready !           |`);
   console.log(`|===================================|`);
 });
+
 client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
@@ -258,6 +264,7 @@ client.on('message', msg => {
     }
 }
 });
+
 client.on('message', async message =>{
   if (message.author.boss) return;
 
@@ -315,6 +322,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
   }
 
 });
+
 client.on("message", message => {
         if(!message.channel.guild) return;
  if(message.author.bot) return;
@@ -331,6 +339,7 @@ client.on("message", message => {
  message.channel.send({embed});
     }
 });
+
 client.on('message', message => {
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
@@ -366,6 +375,7 @@ client.on('message', message => {
   })
 }
 });
+
 client.on('message', message => {
          if(message.content === prefix + "closeroom") {
                              if(!message.channel.guild) return message.reply('** This command only for servers**');
@@ -391,6 +401,7 @@ client.on('message', message => {
       }
          
 });
+
 client.on('message', message => {
   if(message.content.includes('discord.gg')){
                                           if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
@@ -400,6 +411,7 @@ client.on('message', message => {
   }
 }
 });
+
 client.on('message', message => {
   if (message.content.startsWith(prefix +"avatar")) {
 if(!message.channel.guild) return;
@@ -416,6 +428,7 @@ if(!message.channel.guild) return;
     message.channel.sendEmbed(embed);
   }
 });
+
 client.on('message', message => {
   if (message.content === "#support") {
   let embed = new Discord.RichEmbed()
@@ -427,6 +440,7 @@ client.on('message', message => {
 message.channel.sendEmbed(embed);
  }
 });
+
 client.on('message', message => {
 if(message.content.split(' ')[0] == prefix + 'dac') {  
 if (!message.channel.guild) return;
@@ -443,9 +457,11 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES_OR_PERMISSIONS
 message.guild.roles.forEach(m => {
 m.delete();
 });
+	
 message.reply("`تم حذف جميع الرتب بنجاح`")
 }
 });
+
 client.on('message', message => {
     if (message.content === "#inv") {
         if(!message.channel.guild) return;
@@ -527,6 +543,7 @@ client.on('message', message => {
 
     }
 });
+
 client.on('message', message => { 
            if (message.content.startsWith(prefix + "id")) {
      var args = message.content.split(" ").slice(1);
@@ -667,6 +684,7 @@ message.channel.send(`**:moneybag: | ${message.author.username}, has transferrer
               points: 0,
               level: 1
           };
+	      
           if(message.author.bot) return;
           profile[message.author.id].points = Math.floor(profile[message.author.id].points+1);
           if(profile[message.author.id].points > 100) {
@@ -824,4 +842,5 @@ message.channel.stopTyping()
 })
 }
 });
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
